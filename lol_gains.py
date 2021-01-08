@@ -30,10 +30,13 @@ def findDeaths():
 		"bigbootypatches" : "Joe"
 		}
 
+	# set up empty deaths dict
 	deaths_dict = {}
 	for name in names.keys():
-
 		deaths_dict[names[name]] = 0
+
+	
+	for name in names.keys():
 
 		summoner = watcher.summoner.by_name(region, name)
 		all_matches = watcher.match.matchlist_by_account(region, summoner['accountId'])["matches"]
