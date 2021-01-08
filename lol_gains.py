@@ -4,10 +4,10 @@ import time
 
 
 def findDeaths():
+
+	# golbal variables
 	with open('token.txt','r') as f:
 		api_key = f.read()
-	# golbal variables
-	#api_key = 'RGAPI-da1dcd22-87f1-45a9-bed6-046e1e5359a4'
 	watcher = LolWatcher(api_key)
 	region = 'na1'
 
@@ -59,6 +59,8 @@ def findDeaths():
 			print(f"{name}: {kills} / {deaths} / {assists}")
 
 			addToDict(deaths_dict, names, name, deaths)
+
+		time.sleep(1)
 
 	print("............................")
 	print("Death Totals for today:")
